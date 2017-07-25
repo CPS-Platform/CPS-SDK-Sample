@@ -1,16 +1,78 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
 
-          package="ru.ctvt.cps.sdk.sample"
-    >
+<!--
+  ~ Copyright (c) Connectivity,  2017.
+  ~  This program is a free software: you can redistribute it and/or modify
+  ~   it under the terms of the Apache License, Version 2.0 (the "License");
+  ~
+  ~   You may obtain a copy of the Apache 2 License at
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   This program is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   Apache 2 License for more details.
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ru.ctvt.cps.sdk.sample">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".CustomApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/SATEK_theme">
+        <activity android:name=".auth.AccountControlActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".auth.AuthActivity"
+            />
+        <activity
+            android:name=".auth.RegistrationActivity"
+            />
+        <activity
+            android:name=".auth.ResetPasswActivity"
+            />
+        <activity
+            android:name=".user.UserActivity"
+            />
+        <activity
+            android:name=".keyValueStorage.KeyValueStorageViewerActivity"
+            />
+        <activity
+            android:name=".user.device.DevicesListActivity"
+            />
+        <activity
+            android:name=".user.device.SetDeviceCodeActivity"
+            />
+        <activity
+            android:name=".commandQueue.CommandQueuesActivity"
+            />
+        <activity
+            android:name=".sequence.SequencesActivity"
+            />
+        <activity
+            android:name=".commandQueue.CommandsActivity"
+            />
+        <activity
+            android:name=".sequence.DataItemsActivity"
+            />
+        <activity
+            android:name=".deviceRole.DeviceRoleEntryAvtivity"
+            />
+        <activity
+            android:name=".deviceRole.DeviceRoleRemoteActivity"
+            />
     </application>
 
 </manifest>
