@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) Connectivity,  2017.
+  ~  This program is a free software: you can redistribute it and/or modify
+  ~   it under the terms of the Apache License, Version 2.0 (the "License");
+  ~
+  ~   You may obtain a copy of the Apache 2 License at
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   This program is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   Apache 2 License for more details.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <include android:id="@+id/toolbar"
+             layout="@layout/toolbar" />
+
+    <EditText
+        android:id="@+id/storageEditGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/toolbar"
+        android:hint="Group name"/>
+
+    <EditText
+        android:id="@+id/storageEditKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/storageEditGroup"
+        android:hint="Key"/>
+
+    <TextView
+        android:id="@+id/textViewKVS"
+        android:layout_width="368dp"
+        android:layout_height="250dp"
+        android:text="TextView"
+        android:layout_below="@id/storageEditKey"
+        android:scrollbars="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <LinearLayout
+        android:layout_below="@id/textViewKVS"
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnGetKVS"
+            android:text="getKVS"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnGetKVG"
+            android:text="getKVG"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnGetVal"
+            android:text="getValue"/>
+        
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSetKVG"
+            android:text="setKVG"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSetVal"
+            android:text="setValue"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelKVG"
+            android:text="delKVG"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelVal"
+            android:text="delValue"/>
+
+    </LinearLayout>
+
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="Режим" />
+
+
+
+</RelativeLayout>

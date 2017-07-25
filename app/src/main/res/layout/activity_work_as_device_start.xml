@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) Connectivity,  2017.
+  ~  This program is a free software: you can redistribute it and/or modify
+  ~   it under the terms of the Apache License, Version 2.0 (the "License");
+  ~
+  ~   You may obtain a copy of the Apache 2 License at
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   This program is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   Apache 2 License for more details.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cpsplatrofm.testforcpsplatform.deviceRole.DeviceRoleEntryAvtivity">
+
+    <include android:id="@+id/toolbar"
+             layout="@layout/toolbar" />
+
+    <TextView
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/tvWADinfo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWADinfo"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnGetCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Получить код"/>
+
+        <Button
+            android:id="@+id/btnGetToken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:text="Получить токен"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

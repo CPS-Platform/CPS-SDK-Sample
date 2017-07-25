@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) Connectivity,  2017.
+  ~  This program is a free software: you can redistribute it and/or modify
+  ~   it under the terms of the Apache License, Version 2.0 (the "License");
+  ~
+  ~   You may obtain a copy of the Apache 2 License at
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   This program is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   Apache 2 License for more details.
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <include android:id="@+id/toolbar"
+             layout="@layout/toolbar" />
+
+    <ListView
+        android:id="@+id/listOfDevices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addDeviceByCode"
+            android:text="Add new device"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etCode"
+            android:hint="(optional) device code"/>
+    </LinearLayout>
+
+</LinearLayout>
