@@ -24,9 +24,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-//import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-//import ru.ctvt.cps.sdk.model.AccountControl;
-//import ru.ctvt.cps.sdk.model.User;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.AccountControl;
+import ru.ctvt.cps.sdk.model.User;
 import ru.ctvt.cps.sdk.sample.Model;
 import ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleEntryAvtivity;
 import ru.ctvt.cps.sdk.sample.R;

@@ -31,9 +31,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-//import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-//import ru.ctvt.cps.sdk.model.CommandQueue;
-//import ru.ctvt.cps.sdk.model.Device;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.CommandQueue;
+import ru.ctvt.cps.sdk.model.Device;
 import ru.ctvt.cps.sdk.sample.Model;
 import ru.ctvt.cps.sdk.sample.R;
 

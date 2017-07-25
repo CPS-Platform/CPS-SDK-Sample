@@ -34,8 +34,8 @@ import ru.ctvt.cps.sdk.model.KeyValueStorage;
 import ru.ctvt.cps.sdk.model.User;
 import ru.ctvt.cps.sdk.sample.Model;
 import ru.ctvt.cps.sdk.sample.R;
-//import com.google.gson.Gson;
-//import com.google.gson.GsonBuilder;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.util.HashMap;
