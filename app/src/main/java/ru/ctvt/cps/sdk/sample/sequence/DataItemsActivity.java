@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.sequence;
+package ru.ctvt.cps.sample.sequence;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -32,10 +32,10 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.DataItem;
-import ru.ctvt.cps.sdk.sample.Model;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.DataItem;
+import ru.ctvt.cps.sample.Model;
+import ru.ctvt.cps.sample.R;
 
 import java.io.IOException;
 import java.util.ArrayList;

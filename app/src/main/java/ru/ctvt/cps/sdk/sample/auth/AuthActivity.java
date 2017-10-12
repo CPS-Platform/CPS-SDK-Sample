@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.auth;
+package ru.ctvt.cps.sample.auth;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -24,23 +24,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.AccountControl;
-import ru.ctvt.cps.sdk.model.User;
-import ru.ctvt.cps.sdk.sample.Model;
-import ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleEntryAvtivity;
-import ru.ctvt.cps.sdk.sample.R;
-import ru.ctvt.cps.sdk.sample.user.UserActivity;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.AccountControl;
+import com.cpsplatform.android.sdk.model.User;
+import ru.ctvt.cps.sample.Model;
+import ru.ctvt.cps.sample.deviceRole.DeviceRoleEntryAvtivity;
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sample.user.UserActivity;
 
 import java.io.IOException;
 
-import static ru.ctvt.cps.sdk.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
+import static ru.ctvt.cps.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
 
 /**
  * Экран аутентификации
  */
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String SERVICE_ID = "d8cb6994-ad65-46f9-a970-cf1cdccaf4d1"; //идентификатор сервиса
     //private static final String SERVICE_ID = "8fa56e60-89e4-4f43-b9ef-6c00ebf6813d"; //временный
 
     EditText edit_email;
@@ -93,7 +92,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 ACCOUNT_CONTROL.withRole(AccountControl.Role.user);
                 try {
-                    user = ACCOUNT_CONTROL.login(email, password, SERVICE_ID);
+                    user = ACCOUNT_CONTROL.login(email, password, getResources().getString(R.string.service_id));
                     Model.getInstance().setCurrentUser(user);
                     runOnUiThread(new Runnable() {
                         @Override

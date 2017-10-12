@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.sequence;
+package ru.ctvt.cps.sample.sequence;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -23,8 +23,8 @@ import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import ru.ctvt.cps.sdk.model.Sequence;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.model.Sequence;
+import ru.ctvt.cps.sample.R;
 
 import java.util.ArrayList;
 import java.util.List;

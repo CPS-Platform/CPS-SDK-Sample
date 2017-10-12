@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.auth;
+package ru.ctvt.cps.sample.auth;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -23,8 +23,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sample.R;
 
 import java.io.IOException;
 
@@ -98,7 +98,7 @@ public class ResetPasswActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void run() {
                 try {
-                    AccountControlActivity.ACCOUNT_CONTROL.recoverPassword(email, "d8cb6994-ad65-46f9-a970-cf1cdccaf4d1");
+                    AccountControlActivity.ACCOUNT_CONTROL.recoverPassword(email, getResources().getString(R.string.service_id));
                     dialog.dismiss();
                 } catch (BaseCpsException | IOException e) {
                     runOnUiThread(new Runnable() {

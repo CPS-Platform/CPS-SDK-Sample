@@ -22,6 +22,21 @@
     <include android:id="@+id/toolbar"
              layout="@layout/toolbar" />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/iv_service_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+
+        <ImageView
+            android:id="@+id/iv_user_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
     <TextView
         android:id="@+id/textview_user_id"
         android:layout_width="match_parent"
@@ -35,6 +50,20 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/textview_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"/>
+
+
+    <Button
+        android:id="@+id/button_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Редактировать имя пользователя"/>
 
     <Button
         android:id="@+id/button_devices"
@@ -52,4 +81,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="User KVS"/>
+
+    <Button
+        android:id="@+id/btn_user_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change avatar"/>
+
 </LinearLayout>

@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.sequence;
+package ru.ctvt.cps.sample.sequence;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -32,11 +32,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.Device;
-import ru.ctvt.cps.sdk.model.Sequence;
-import ru.ctvt.cps.sdk.sample.Model;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.Device;
+import com.cpsplatform.android.sdk.model.Sequence;
+import ru.ctvt.cps.sample.Model;
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sample.triggers.TriggersActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -243,6 +244,10 @@ public class SequencesActivity extends AppCompatActivity implements View.OnClick
                         //Используя модель, записываем выбранную последовательность данных
                         Model.getInstance().setCurrentSequence((Sequence) sequencesAdapter.getItem(position));
                         startActivity(DataItemsActivity.createActivity(getApplicationContext()));
+                        break;
+                    case R.id.queue_and_seq_menu_item_triggers:
+                        Model.getInstance().setCurrentSequence((Sequence) sequencesAdapter.getItem(position));
+                        startActivity(TriggersActivity.startActivity(getApplicationContext(), 2));
                         break;
                     case R.id.queue_and_seq_menu_item_delete:
                         //Все вызовы методов нашего SDK должны осуществляться из отдельного потока

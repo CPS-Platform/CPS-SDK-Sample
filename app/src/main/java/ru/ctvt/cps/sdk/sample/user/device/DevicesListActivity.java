@@ -12,9 +12,12 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.user.device;
+package ru.ctvt.cps.sample.user.device;
 
+import android.app.AlertDialog;
+import android.app.DialogFragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
@@ -27,14 +30,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.UserDevice;
-import ru.ctvt.cps.sdk.model.User;
-import ru.ctvt.cps.sdk.sample.Model;
-import ru.ctvt.cps.sdk.sample.commandQueue.CommandQueuesActivity;
-import ru.ctvt.cps.sdk.sample.keyValueStorage.KeyValueStorageViewerActivity;
-import ru.ctvt.cps.sdk.sample.R;
-import ru.ctvt.cps.sdk.sample.sequence.SequencesActivity;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.UserDevice;
+import com.cpsplatform.android.sdk.model.User;
+import ru.ctvt.cps.sample.Model;
+import ru.ctvt.cps.sample.commandQueue.CommandQueuesActivity;
+import ru.ctvt.cps.sample.keyValueStorage.KeyValueStorageViewerActivity;
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sample.sequence.SequencesActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,6 +55,7 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
     ProgressDialog progressDialog;
     Button buttonAddByCode;
     EditText editTextCode;
+    EditText editTextName;
     Model model;
 
     User user;
@@ -82,6 +86,7 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
         buttonAddByCode = (Button) findViewById(R.id.addDeviceByCode);
         lv = (ListView) findViewById(R.id.listOfDevices);
         editTextCode = (EditText) findViewById(R.id.etCode);
+        editTextName = (EditText) findViewById(R.id.etName);
         editTextCode.setFocusable(true);
         devicesAdapter = new DevicesAdapter(DevicesListActivity.this, list);
         lv.setAdapter(devicesAdapter);
@@ -89,13 +94,6 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
         buttonAddByCode.setOnClickListener(this);
 
         lv.setOnItemClickListener(this);
-
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
     }
 
     /**
@@ -121,7 +119,10 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
                 try {
                     //добавляем новое устройство текущему пользователю, передавая код привязки
                     //если поле ввода пустое - новое устройство добавится без привязки
-                    user.addDevice(editTextCode.getText().toString());
+                    if(editTextCode.getText().toString().isEmpty())
+                        user.addDevice(editTextName.getText().toString());
+                    else
+                        user.addDevice(editTextName.getText().toString(), editTextCode.getText().toString());
                     list = user.fetchDevices();
                     runOnUiThread(new Runnable() {
                         @Override
@@ -177,40 +178,24 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
 
             @Override
             public void run() {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dialog = new ProgressDialog(DevicesListActivity.this);
-                        dialog.setTitle("Выполнение запроса");
-                        dialog.setMessage("Подождите");
-                        dialog.show();
-                    }
+                runOnUiThread(() -> {
+                    dialog = new ProgressDialog(DevicesListActivity.this);
+                    dialog.setTitle("Выполнение запроса");
+                    dialog.setMessage("Подождите");
+                    dialog.show();
                 });
                 try {
                     list = user.fetchDevices();
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            devicesAdapter.updateData(list);
-                        }
-                    });
+                    runOnUiThread(() -> devicesAdapter.updateData(list));
 
                 } catch (final IOException | BaseCpsException e) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
-                        }
+                    runOnUiThread(() -> {
+                        Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
                     });
                 }
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        dialog.dismiss();
-                    }
-                });
+                runOnUiThread(() -> dialog.dismiss());
             }
 
 
@@ -234,22 +219,43 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
                 model.setCurrentDevice(list.get(position));
                 switch (item.getItemId()) {
                     case R.id.menu_item_kv_storage:
-                        startActivity(KeyValueStorageViewerActivity.createActivity(DevicesListActivity.this, 0));
+                        startActivity(KeyValueStorageViewerActivity.createActivity(getApplicationContext(), 0));
                         break;
                     case R.id.menu_item_command_queues:
-                        startActivity(CommandQueuesActivity.createActivity(DevicesListActivity.this));
+                        startActivity(CommandQueuesActivity.createActivity(getApplicationContext()));
                         break;
                     case R.id.menu_item_sequences:
-                        startActivity(SequencesActivity.createActivity(DevicesListActivity.this));
+                        startActivity(SequencesActivity.createActivity(getApplicationContext()));
                         break;
                     case R.id.menu_item_set_device_code:
-                        startActivity(SetDeviceCodeActivity.setDeviceCodeIntent(DevicesListActivity.this));
+                        startActivity(SetDeviceCodeActivity.setDeviceCodeIntent(getApplicationContext()));
+                        break;
+                    case R.id.menu_item_rename_device:
+                        startActivity(RenameDeviceActivity.startActivity(getApplicationContext()));
+                        break;
+                    case R.id.menu_item_delete_device:
+                        deleteDevice(position);
                         break;
                 }
                 return false;
             }
         });
         menu.show();
+    }
+
+    private void deleteDevice(int position) {
+        new Thread(() -> {
+            try {
+                list.get(position).deleteDevice();
+                list = user.fetchDevices();
+
+                runOnUiThread(() -> devicesAdapter.updateData(list));
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (final BaseCpsException e) {
+                runOnUiThread(() -> Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
+            }
+        }).start();
     }
 
 }

@@ -21,6 +21,9 @@
         android:id="@+id/queue_and_seq_menu_item_view"
         android:title="Просмотр"/>
     <item
+        android:id="@+id/queue_and_seq_menu_item_triggers"
+        android:title="Триггеры"/>
+    <item
         android:id="@+id/queue_and_seq_menu_item_delete"
         android:title="Удалить" />
 </menu>

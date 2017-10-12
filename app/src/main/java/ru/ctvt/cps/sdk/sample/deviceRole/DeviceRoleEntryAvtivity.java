@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.deviceRole;
+package ru.ctvt.cps.sample.deviceRole;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,15 +22,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.AccountControl;
-import ru.ctvt.cps.sdk.model.RecorderDevice;
-import ru.ctvt.cps.sdk.sample.Model;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.AccountControl;
+import com.cpsplatform.android.sdk.model.RecorderDevice;
+import ru.ctvt.cps.sample.Model;
+import ru.ctvt.cps.sample.R;
 
 import java.io.IOException;
 
-import static ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleRemoteActivity.startDeviceRemoteActivity;
+import static ru.ctvt.cps.sample.deviceRole.DeviceRoleRemoteActivity.startDeviceRemoteActivity;
 
 /**
  * Экран начала работы в режиме реального устройства
@@ -66,7 +66,7 @@ public class DeviceRoleEntryAvtivity extends AppCompatActivity implements View.O
         btn_getToken.setOnClickListener(this);
         acc = AccountControl.getInstance().withRole(AccountControl.Role.device);
         try {
-            Model.getInstance().setCurrentDevice(acc.instantiateDeviceRecorder("d8cb6994-ad65-46f9-a970-cf1cdccaf4d1"));
+            Model.getInstance().setCurrentDevice(acc.instantiateDeviceRecorder(getResources().getString(R.string.service_id)));
         } catch (BaseCpsException e) {
             Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }

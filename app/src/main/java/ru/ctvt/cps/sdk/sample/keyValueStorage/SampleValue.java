@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.keyValueStorage;
+package ru.ctvt.cps.sample.keyValueStorage;
 
 import com.google.gson.annotations.SerializedName;
 

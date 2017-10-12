@@ -19,4 +19,5 @@
         <item>INTEGER</item>
         <item>REAL</item>
     </string-array>
+    <string name="service_id">048507fc-4ef6-4687-9683-7cff748ac16e</string>
 </resources>

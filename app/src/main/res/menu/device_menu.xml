@@ -29,4 +29,10 @@
 
     <item android:id="@+id/menu_item_set_device_code"
         android:title="Привязать устройство"/>
+
+    <item android:id="@+id/menu_item_rename_device"
+        android:title="Переименовать устройство"/>
+
+    <item android:id="@+id/menu_item_delete_device"
+        android:title="Удалить устройство"/>
 </menu>

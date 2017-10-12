@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.user.device;
+package ru.ctvt.cps.sample.triggers;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -22,44 +22,47 @@ import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import com.cpsplatform.android.sdk.model.UserDevice;
+import com.cpsplatform.android.sdk.model.Trigger;
 import ru.ctvt.cps.sample.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by ngrypie on 10.10.2017.
+ */
 
-public class DevicesAdapter extends BaseAdapter {
+public class TriggersAdapter extends BaseAdapter{
 
     Context context;
     LayoutInflater inflater;
 
-    List<UserDevice> deviceList = new ArrayList<>();
+    List<Trigger> triggerList = new ArrayList<>();
 
     CheckedTextView idView;
     TextView ownerView;
     TextView createDateView;
 
-    DevicesAdapter(Context context, List<UserDevice> deviceList) {
+    TriggersAdapter(Context context, List<Trigger> triggerList) {
         this.context = context;
-        this.deviceList = deviceList;
+        this.triggerList = triggerList;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return deviceList.size();
+        return triggerList.size();
     }
 
-    public void updateData(List<UserDevice> newList) {
-        deviceList.clear();
-        deviceList.addAll(newList);
+    public void updateData(List<Trigger> newList) {
+        triggerList.clear();
+        triggerList.addAll(newList);
         notifyDataSetChanged();
     }
 
     @Override
     public Object getItem(int position) {
-        return deviceList.get(position);
+        return triggerList.get(position);
     }
 
     @Override
@@ -76,12 +79,12 @@ public class DevicesAdapter extends BaseAdapter {
         idView = (CheckedTextView) view.findViewById(R.id.view_item_title_first);
         ownerView = (TextView) view.findViewById(R.id.view_item_title_second);
         createDateView = (TextView) view.findViewById(R.id.view_item_title_third);
-        idView.setText("ID: " + deviceList.get(position).getDeviceID());
+        idView.setText("Header: " + triggerList.get(position).getHeader());
         idView.setTextSize(16);
         idView.setCheckMarkDrawable(null);
-        ownerView.setText("Имя устройства: " + deviceList.get(position).getName());
+        ownerView.setText("Имя: " + triggerList.get(position).getName());
         ownerView.setTextSize(12);
-        createDateView.setText("Создан: " + deviceList.get(position).getCreateDate());
+        createDateView.setText("Состояние: " + triggerList.get(position).isEnabled());
         createDateView.setTextSize(12);
         return view;
     }

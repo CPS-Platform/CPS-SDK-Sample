@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Connectivity,  2017.
   ~  This program is a free software: you can redistribute it and/or modify
   ~   it under the terms of the Apache License, Version 2.0 (the "License");
@@ -12,12 +10,12 @@
   ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
   ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   ~   Apache 2 License for more details.
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="ru.ctvt.cps.sdk.sample">
+    package="ru.ctvt.cps.sample">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".CustomApplication"
@@ -34,45 +32,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".auth.AuthActivity"
-            />
-        <activity
-            android:name=".auth.RegistrationActivity"
-            />
-        <activity
-            android:name=".auth.ResetPasswActivity"
-            />
-        <activity
-            android:name=".user.UserActivity"
-            />
-        <activity
-            android:name=".keyValueStorage.KeyValueStorageViewerActivity"
-            />
-        <activity
-            android:name=".user.device.DevicesListActivity"
-            />
-        <activity
-            android:name=".user.device.SetDeviceCodeActivity"
-            />
-        <activity
-            android:name=".commandQueue.CommandQueuesActivity"
-            />
-        <activity
-            android:name=".sequence.SequencesActivity"
-            />
-        <activity
-            android:name=".commandQueue.CommandsActivity"
-            />
-        <activity
-            android:name=".sequence.DataItemsActivity"
-            />
-        <activity
-            android:name=".deviceRole.DeviceRoleEntryAvtivity"
-            />
-        <activity
-            android:name=".deviceRole.DeviceRoleRemoteActivity"
-            />
+        <activity android:name=".auth.AuthActivity" />
+        <activity android:name=".auth.RegistrationActivity" />
+        <activity android:name=".auth.ResetPasswActivity" />
+        <activity android:name=".user.UserActivity" />
+        <activity android:name=".keyValueStorage.KeyValueStorageViewerActivity" />
+        <activity android:name=".user.device.DevicesListActivity" />
+        <activity android:name=".user.device.SetDeviceCodeActivity" />
+        <activity android:name=".commandQueue.CommandQueuesActivity" />
+        <activity android:name=".sequence.SequencesActivity" />
+        <activity android:name=".commandQueue.CommandsActivity" />
+        <activity android:name=".sequence.DataItemsActivity" />
+        <activity android:name=".deviceRole.DeviceRoleEntryAvtivity" />
+        <activity android:name=".deviceRole.DeviceRoleRemoteActivity" />
+        <activity android:name=".user.EditNameActivity" />
+        <activity android:name=".triggers.TriggersActivity" />
+        <activity android:name=".user.device.RenameDeviceActivity"></activity>
     </application>
 
 </manifest>

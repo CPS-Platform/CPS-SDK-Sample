@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.commandQueue;
+package ru.ctvt.cps.sample.commandQueue;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -31,11 +31,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.CommandQueue;
-import ru.ctvt.cps.sdk.model.Device;
-import ru.ctvt.cps.sdk.sample.Model;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.CommandQueue;
+import com.cpsplatform.android.sdk.model.Device;
+import ru.ctvt.cps.sample.Model;
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sample.triggers.TriggersActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -219,7 +220,11 @@ public class CommandQueuesActivity extends AppCompatActivity implements View.OnC
                     case R.id.queue_and_seq_menu_item_view:
                         //Используя модель, записываем выбранную очередь команд
                         Model.getInstance().setCurrentCommandQueue((CommandQueue) commandQueuesAdapter.getItem(position));
-                        startActivity(CommandsActivity.createActivity(CommandQueuesActivity.this));
+                        startActivity(CommandsActivity.createActivity(getApplicationContext()));
+                        break;
+                    case R.id.queue_and_seq_menu_item_triggers:
+                        Model.getInstance().setCurrentCommandQueue((CommandQueue) commandQueuesAdapter.getItem(position));
+                        startActivity(TriggersActivity.startActivity(getApplicationContext(), 1));
                         break;
                     case R.id.queue_and_seq_menu_item_delete:
                         //Все вызовы методов нашего SDK должны осуществляться из отдельного потока

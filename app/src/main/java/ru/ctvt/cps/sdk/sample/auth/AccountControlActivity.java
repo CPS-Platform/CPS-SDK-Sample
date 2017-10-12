@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.auth;
+package ru.ctvt.cps.sample.auth;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -25,12 +25,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.SDKManager;
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.model.AccountControl;
-import ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleRemoteActivity;
-import ru.ctvt.cps.sdk.sample.R;
-import ru.ctvt.cps.sdk.sample.user.UserActivity;
+import com.cpsplatform.android.sdk.SDKManager;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import com.cpsplatform.android.sdk.model.AccountControl;
+import ru.ctvt.cps.sample.deviceRole.DeviceRoleRemoteActivity;
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sample.user.UserActivity;
 
 import java.io.IOException;
 
@@ -117,27 +117,15 @@ public class AccountControlActivity extends AppCompatActivity implements View.On
             progress.setTitle("Выполнение запроса");
             progress.setMessage("Пожалуйста, подождите");
             progress.show();
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
+            new Thread(() -> {
                     try {
                         ACCOUNT_CONTROL.logout();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                progress.dismiss();
-                            }
-                        });
+                        runOnUiThread(() -> progress.dismiss());
                     } catch (BaseCpsException | IOException e) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        runOnUiThread(() -> Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
                     }
                 }
-            }).start();
+            ).start();
         }
         //в любом случае чистим SharedPreferences
         mSharedPreferences.edit().putString(SDKManager.PreferencesNameConsts.AUTH_TOKEN, "").apply();

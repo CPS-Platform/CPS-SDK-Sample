@@ -12,9 +12,10 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sdk.sample.auth;
+package ru.ctvt.cps.sample.auth;
 
 import android.app.ProgressDialog;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,8 +24,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sdk.sample.R;
+import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sample.R;
 
 import java.io.IOException;
 
@@ -110,7 +111,7 @@ public class RegistrationActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void run() {
                 try {
-                    AccountControlActivity.ACCOUNT_CONTROL.register(email, password, "d8cb6994-ad65-46f9-a970-cf1cdccaf4d1");
+                    AccountControlActivity.ACCOUNT_CONTROL.register(email, password, getResources().getString(R.string.service_id));
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

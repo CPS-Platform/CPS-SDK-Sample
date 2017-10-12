@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!--
   ~ Copyright (c) Connectivity,  2017.
   ~  This program is a free software: you can redistribute it and/or modify
@@ -21,37 +20,13 @@
     android:orientation="vertical">
 
     <include android:id="@+id/toolbar"
-             layout="@layout/toolbar" />
+        layout="@layout/toolbar" />
 
     <ListView
-        android:id="@+id/listOfDevices"
+        android:id="@+id/listOfTriggers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
     </ListView>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etName"
-        android:hint="(reqiured) device name"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/addDeviceByCode"
-            android:text="Add new device"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/etCode"
-            android:hint="(optional) device code"/>
-    </LinearLayout>
 
 </LinearLayout>
