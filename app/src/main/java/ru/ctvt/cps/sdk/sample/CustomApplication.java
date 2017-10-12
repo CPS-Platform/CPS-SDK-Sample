@@ -12,14 +12,14 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample;
+package ru.ctvt.cps.sdk.sample;
 
 import android.app.Application;
 import android.content.Context;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 
-import com.cpsplatform.android.sdk.SDKManager;
+import ru.ctvt.cps.sdk.SDKManager;
 
 /**
  * Инициализация библиотеки CPS при старте программы

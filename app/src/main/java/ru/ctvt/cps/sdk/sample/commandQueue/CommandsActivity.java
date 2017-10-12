@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.commandQueue;
+package ru.ctvt.cps.sdk.sample.commandQueue;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
@@ -33,16 +32,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.model.Command;
-import com.cpsplatform.android.sdk.model.CommandQueue;
-import com.cpsplatform.android.sdk.model.Device;
-import ru.ctvt.cps.sample.Model;
-import ru.ctvt.cps.sample.R;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.Command;
+import ru.ctvt.cps.sdk.sample.Model;
 
 /**
  * Экран информации выбранной очереди команд

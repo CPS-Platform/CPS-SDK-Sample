@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.user.device;
+package ru.ctvt.cps.sdk.sample.user.device;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,9 +23,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import ru.ctvt.cps.sample.Model;
 import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.sample.Model;
 
 import java.io.IOException;
 

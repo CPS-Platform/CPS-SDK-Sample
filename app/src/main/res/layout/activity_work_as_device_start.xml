@@ -19,7 +19,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ru.ctvt.cps.sample.deviceRole.DeviceRoleEntryAvtivity">
+    tools:context="ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleEntryActivity">
 
     <include android:id="@+id/toolbar"
              layout="@layout/toolbar" />

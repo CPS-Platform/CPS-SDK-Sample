@@ -12,19 +12,16 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.user;
+package ru.ctvt.cps.sdk.sample.user;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.Intent;
-
-import android.database.Cursor;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -33,20 +30,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.SDKManager;
-import com.cpsplatform.android.sdk.model.AccountControl;
-import com.cpsplatform.android.sdk.model.User;
-import ru.ctvt.cps.sample.Model;
-import ru.ctvt.cps.sample.user.device.DevicesListActivity;
-import ru.ctvt.cps.sample.keyValueStorage.KeyValueStorageViewerActivity;
-import ru.ctvt.cps.sample.R;
-import com.squareup.picasso.Picasso;
-
-import java.io.File;
 import java.io.IOException;
 
-import static ru.ctvt.cps.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
+import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.SDKManager;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.AccountControl;
+import ru.ctvt.cps.sdk.model.User;
+import ru.ctvt.cps.sdk.sample.Model;
+import ru.ctvt.cps.sdk.sample.keyValueStorage.KeyValueStorageViewerActivity;
+import ru.ctvt.cps.sdk.sample.user.device.DevicesListActivity;
+
+import static ru.ctvt.cps.sdk.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
 
 /**
  * Экран для работы с пользователем

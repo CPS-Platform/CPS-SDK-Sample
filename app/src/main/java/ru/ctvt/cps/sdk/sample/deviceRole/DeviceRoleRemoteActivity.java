@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.deviceRole;
+package ru.ctvt.cps.sdk.sample.deviceRole;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,13 +22,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.cpsplatform.android.sdk.model.AccountControl;
-import ru.ctvt.cps.sample.commandQueue.CommandQueuesActivity;
-import ru.ctvt.cps.sample.keyValueStorage.KeyValueStorageViewerActivity;
 import ru.ctvt.cps.sample.R;
-import ru.ctvt.cps.sample.sequence.SequencesActivity;
+import ru.ctvt.cps.sdk.model.AccountControl;
+import ru.ctvt.cps.sdk.sample.commandQueue.CommandQueuesActivity;
+import ru.ctvt.cps.sdk.sample.keyValueStorage.KeyValueStorageViewerActivity;
+import ru.ctvt.cps.sdk.sample.sequence.SequencesActivity;
 
-import static ru.ctvt.cps.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
+import static ru.ctvt.cps.sdk.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
 
 /**
  * Экран управления устройством

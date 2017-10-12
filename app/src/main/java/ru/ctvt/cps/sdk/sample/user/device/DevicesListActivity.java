@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.user.device;
+package ru.ctvt.cps.sdk.sample.user.device;
 
 import android.app.AlertDialog;
 import android.app.DialogFragment;
@@ -30,14 +30,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.model.UserDevice;
-import com.cpsplatform.android.sdk.model.User;
-import ru.ctvt.cps.sample.Model;
-import ru.ctvt.cps.sample.commandQueue.CommandQueuesActivity;
-import ru.ctvt.cps.sample.keyValueStorage.KeyValueStorageViewerActivity;
 import ru.ctvt.cps.sample.R;
-import ru.ctvt.cps.sample.sequence.SequencesActivity;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.UserDevice;
+import ru.ctvt.cps.sdk.model.User;
+import ru.ctvt.cps.sdk.sample.Model;
+import ru.ctvt.cps.sdk.sample.commandQueue.CommandQueuesActivity;
+import ru.ctvt.cps.sdk.sample.keyValueStorage.KeyValueStorageViewerActivity;
+import ru.ctvt.cps.sdk.sample.sequence.SequencesActivity;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,7 +122,7 @@ public class DevicesListActivity extends AppCompatActivity implements View.OnCli
                     if(editTextCode.getText().toString().isEmpty())
                         user.addDevice(editTextName.getText().toString());
                     else
-                        user.addDevice(editTextName.getText().toString(), editTextCode.getText().toString());
+                        user.addDevice(editTextCode.getText().toString(), editTextName.getText().toString());
                     list = user.fetchDevices();
                     runOnUiThread(new Runnable() {
                         @Override

@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.auth;
+package ru.ctvt.cps.sdk.sample.auth;
 
 import android.app.ProgressDialog;
 import android.content.res.Resources;
@@ -24,8 +24,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
 import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
 
 import java.io.IOException;
 

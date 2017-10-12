@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.commandQueue;
+package ru.ctvt.cps.sdk.sample.commandQueue;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -23,8 +23,8 @@ import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import com.cpsplatform.android.sdk.model.Command;
 import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.model.Command;
 
 import java.util.ArrayList;
 import java.util.List;

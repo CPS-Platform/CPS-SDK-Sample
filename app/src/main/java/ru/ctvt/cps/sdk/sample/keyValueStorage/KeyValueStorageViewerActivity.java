@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.keyValueStorage;
+package ru.ctvt.cps.sdk.sample.keyValueStorage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -28,12 +28,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.model.Device;
-import com.cpsplatform.android.sdk.model.KeyValueStorage;
-import com.cpsplatform.android.sdk.model.User;
-import ru.ctvt.cps.sample.Model;
 import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.Device;
+import ru.ctvt.cps.sdk.model.KeyValueStorage;
+import ru.ctvt.cps.sdk.model.User;
+import ru.ctvt.cps.sdk.sample.Model;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.deviceRole;
+package ru.ctvt.cps.sdk.sample.deviceRole;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,21 +22,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.model.AccountControl;
-import com.cpsplatform.android.sdk.model.RecorderDevice;
-import ru.ctvt.cps.sample.Model;
 import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.AccountControl;
+import ru.ctvt.cps.sdk.model.RecorderDevice;
+import ru.ctvt.cps.sdk.sample.Model;
 
 import java.io.IOException;
 
-import static ru.ctvt.cps.sample.deviceRole.DeviceRoleRemoteActivity.startDeviceRemoteActivity;
+import static ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleRemoteActivity.startDeviceRemoteActivity;
 
 /**
  * Экран начала работы в режиме реального устройства
  */
 
-public class DeviceRoleEntryAvtivity extends AppCompatActivity implements View.OnClickListener {
+public class DeviceRoleEntryActivity extends AppCompatActivity implements View.OnClickListener {
 
     AccountControl acc = null;
     RecorderDevice currentDevice;
@@ -116,7 +116,7 @@ public class DeviceRoleEntryAvtivity extends AppCompatActivity implements View.O
                                 @Override
                                 public void run() {
                                     Toast.makeText(getApplicationContext(), "Устройство успешно привязано!", Toast.LENGTH_SHORT).show();
-                                    startActivity(startDeviceRemoteActivity(DeviceRoleEntryAvtivity.this));
+                                    startActivity(startDeviceRemoteActivity(DeviceRoleEntryActivity.this));
                                     finish();
                                 }
                             });

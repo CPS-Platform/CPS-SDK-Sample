@@ -12,14 +12,14 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample;
+package ru.ctvt.cps.sdk.sample;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.model.AccountControl;
-import com.cpsplatform.android.sdk.model.CommandQueue;
-import com.cpsplatform.android.sdk.model.Device;
-import com.cpsplatform.android.sdk.model.Sequence;
-import com.cpsplatform.android.sdk.model.User;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.AccountControl;
+import ru.ctvt.cps.sdk.model.CommandQueue;
+import ru.ctvt.cps.sdk.model.Device;
+import ru.ctvt.cps.sdk.model.Sequence;
+import ru.ctvt.cps.sdk.model.User;
 
 /**
  * Синглтон для хранения модели данных на время работы приложения

@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.user.device;
+package ru.ctvt.cps.sdk.sample.user.device;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -22,8 +22,8 @@ import android.widget.BaseAdapter;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
 
-import com.cpsplatform.android.sdk.model.UserDevice;
 import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.model.UserDevice;
 
 import java.util.ArrayList;
 import java.util.List;

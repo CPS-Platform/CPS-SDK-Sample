@@ -12,7 +12,7 @@
  *   Apache 2 License for more details.
  */
 
-package ru.ctvt.cps.sample.auth;
+package ru.ctvt.cps.sdk.sample.auth;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -24,17 +24,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.cpsplatform.android.sdk.errorprocessing.BaseCpsException;
-import com.cpsplatform.android.sdk.model.AccountControl;
-import com.cpsplatform.android.sdk.model.User;
-import ru.ctvt.cps.sample.Model;
-import ru.ctvt.cps.sample.deviceRole.DeviceRoleEntryAvtivity;
 import ru.ctvt.cps.sample.R;
-import ru.ctvt.cps.sample.user.UserActivity;
+import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
+import ru.ctvt.cps.sdk.model.AccountControl;
+import ru.ctvt.cps.sdk.model.User;
+import ru.ctvt.cps.sdk.sample.Model;
+import ru.ctvt.cps.sdk.sample.deviceRole.DeviceRoleEntryActivity;
+import ru.ctvt.cps.sdk.sample.user.UserActivity;
 
 import java.io.IOException;
 
-import static ru.ctvt.cps.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
+import static ru.ctvt.cps.sdk.sample.auth.AccountControlActivity.ACCOUNT_CONTROL;
 
 /**
  * Экран аутентификации
@@ -133,7 +133,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.button_workAsDevice:
-                Intent intent = new Intent(AuthActivity.this, DeviceRoleEntryAvtivity.class);
+                Intent intent = new Intent(AuthActivity.this, DeviceRoleEntryActivity.class);
                 startActivity(intent);
                 finish();
                 break;
