@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.sample.R;
 import ru.ctvt.cps.sdk.SDKManager;
 import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
 import ru.ctvt.cps.sdk.model.AccountControl;
@@ -130,6 +130,8 @@ public class AccountControlActivity extends AppCompatActivity implements View.On
         //в любом случае чистим SharedPreferences
         mSharedPreferences.edit().putString(SDKManager.PreferencesNameConsts.AUTH_TOKEN, "").apply();
         mSharedPreferences.edit().putString(SDKManager.PreferencesNameConsts.ROLE, "").apply();
+
+        updateUI();
     }
 
     /*

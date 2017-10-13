@@ -12,7 +12,7 @@
   ~   Apache 2 License for more details.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.ctvt.cps.sample">
+    package="ru.ctvt.cps.sdk.sample">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -43,7 +43,7 @@
         <activity android:name=".sequence.SequencesActivity" />
         <activity android:name=".commandQueue.CommandsActivity" />
         <activity android:name=".sequence.DataItemsActivity" />
-        <activity android:name=".deviceRole.DeviceRoleEntryAvtivity" />
+        <activity android:name=".deviceRole.DeviceRoleEntryActivity" />
         <activity android:name=".deviceRole.DeviceRoleRemoteActivity" />
         <activity android:name=".user.EditNameActivity" />
         <activity android:name=".triggers.TriggersActivity" />

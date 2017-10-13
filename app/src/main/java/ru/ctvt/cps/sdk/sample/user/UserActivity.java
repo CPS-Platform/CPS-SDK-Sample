@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.sample.R;
 import ru.ctvt.cps.sdk.SDKManager;
 import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
 import ru.ctvt.cps.sdk.model.AccountControl;

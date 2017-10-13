@@ -22,7 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.sample.R;
 import ru.ctvt.cps.sdk.model.AccountControl;
 import ru.ctvt.cps.sdk.sample.commandQueue.CommandQueuesActivity;
 import ru.ctvt.cps.sdk.sample.keyValueStorage.KeyValueStorageViewerActivity;

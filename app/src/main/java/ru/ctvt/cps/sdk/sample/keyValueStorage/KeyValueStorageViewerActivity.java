@@ -28,7 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.sample.R;
 import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
 import ru.ctvt.cps.sdk.model.Device;
 import ru.ctvt.cps.sdk.model.KeyValueStorage;

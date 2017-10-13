@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.sample.R;
 import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
 import ru.ctvt.cps.sdk.model.Command;
 import ru.ctvt.cps.sdk.sample.Model;

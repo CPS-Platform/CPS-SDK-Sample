@@ -24,7 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import ru.ctvt.cps.sample.R;
+import ru.ctvt.cps.sdk.sample.R;
 import ru.ctvt.cps.sdk.errorprocessing.BaseCpsException;
 import ru.ctvt.cps.sdk.model.AccountControl;
 import ru.ctvt.cps.sdk.model.User;
